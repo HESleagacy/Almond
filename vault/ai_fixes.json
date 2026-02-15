@@ -1,0 +1,15 @@
+[
+  {
+    "id": "e2814e8959cf",
+    "timestamp": "2026-02-15T07:02:59.765147+00:00",
+    "error_signature": "ConnectionTimeout.*unreachable",
+    "fix_description": "Increase readinessProbe initialDelaySeconds and memory limits",
+    "fix_code": "readinessProbe:\n  initialDelaySeconds: 30\nresources:\n  limits:\n    memory: 512Mi",
+    "project": "auth-service",
+    "confidence": 0.85,
+    "tags": [
+      "type:timeout"
+    ],
+    "times_matched": 1
+  }
+]
