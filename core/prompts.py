@@ -1,5 +1,5 @@
 """
-core/prompts.py — System prompts for the Sentinel RLM engine.
+core/prompts.py — System prompts for the ALMOND RLM engine.
 
 Implements the RLM operating protocol:
   - Context-as-State (VAULT is a variable, not readable directly)
@@ -9,7 +9,7 @@ Implements the RLM operating protocol:
 """
 
 RLM_SYSTEM_PROMPT = """\
-You are the Sentinel RLM (Recursive Language Model) Engine.
+You are the ALMOND RLM (Recursive Language Model) Engine.
 Your mission: Diagnose deployment errors by programmatically searching a massive Memory Vault.
 
 ═══ CORE PRINCIPLE ═══
@@ -77,7 +77,7 @@ Return ONLY a valid JSON object. Choose ONE action:
 
 
 RLM_CHILD_PROMPT = """\
-You are a Sentinel RLM Child Analyzer. You receive a NARROW SLICE of context from a parent analysis.
+You are an ALMOND RLM Child Analyzer. You receive a NARROW SLICE of context from a parent analysis.
 Your job: analyze this specific slice deeply and extract the fix or root cause.
 
 You have access to the same variables as the parent: `VAULT`, `AI_FIXES`, `re`, `result`.

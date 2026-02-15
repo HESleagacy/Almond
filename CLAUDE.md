@@ -1,4 +1,4 @@
-# Sentinel RLM: Deployment Sentinel
+# ALMOND: Memory-Driven Deployment Assistant
 
 ## Architecture: Recursive Language Model (RLM)
 - **Core Principle:** Treat `vault/history.txt` as a programmable state variable, not a context window.
@@ -16,4 +16,4 @@
 ## Commands
 - **Test Engine:** `python main.py`
 - **Check Cache:** `cat vault/ai_fixes.json`
-- **Debug Logs:** `sentinel debug --logs <file>` (Person 3 Implementation)
+- **Debug Logs:** `almond debug --logs <file>` (Person 3 Implementation)
