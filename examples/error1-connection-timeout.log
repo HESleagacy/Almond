@@ -1,0 +1,7 @@
+[2024-02-15 10:30:45] ERROR: Connection failed
+[2024-02-15 10:30:45] ConnectionTimeout: Target 10.0.0.5:8080 unreachable after 30s
+[2024-02-15 10:30:45] Retrying connection... (attempt 1/3)
+[2024-02-15 10:30:50] ConnectionTimeout: Target 10.0.0.5:8080 unreachable after 30s
+[2024-02-15 10:30:50] Retrying connection... (attempt 2/3)
+[2024-02-15 10:30:55] ConnectionTimeout: Target 10.0.0.5:8080 unreachable after 30s
+[2024-02-15 10:30:55] Max retries exceeded. Exiting.

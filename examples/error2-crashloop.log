@@ -1,0 +1,5 @@
+[2024-02-15 11:00:00] Pod nginx-deployment-xyz789 failed to start
+[2024-02-15 11:00:00] Error: Back-off restarting failed container
+[2024-02-15 11:00:05] Events: CrashLoopBackOff
+[2024-02-15 11:00:05] Container exits immediately after start
+[2024-02-15 11:00:10] Missing environment variable DATABASE_URL

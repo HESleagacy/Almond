@@ -1,0 +1,5 @@
+[2024-02-15 12:00:00] FATAL: Container terminated
+[2024-02-15 12:00:00] OOMKilled - Container memory limit exceeded
+[2024-02-15 12:00:00] Exit code: 137
+[2024-02-15 12:00:00] Events show: Pod terminated with OOMKilled
+[2024-02-15 12:00:05] Container using more memory than 256Mi limit
