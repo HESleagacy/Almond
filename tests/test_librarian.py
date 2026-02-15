@@ -434,6 +434,7 @@ class TestScrapeGitLog:
         subprocess.run(["git", "init"], cwd=repo, capture_output=True)
         subprocess.run(["git", "config", "user.email", "test@example.com"], cwd=repo, capture_output=True)
         subprocess.run(["git", "config", "user.name", "Test"], cwd=repo, capture_output=True)
+        subprocess.run(["git", "config", "commit.gpgsign", "false"], cwd=repo, capture_output=True)
 
         # Commit 1: initial
         (repo / "app.py").write_text("print('v1')")

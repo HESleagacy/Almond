@@ -1,0 +1,93 @@
+[
+  {
+    "id": "e2814e8959cf",
+    "timestamp": "2026-02-15T07:02:59.765147+00:00",
+    "error_signature": "Connection timeout.*5432|dial tcp.*i/o timeout",
+    "fix_description": "Increase readinessProbe initialDelaySeconds and memory limits to allow database connection pool to initialize properly",
+    "fix_code": "readinessProbe:\n  initialDelaySeconds: 30\n  periodSeconds: 5\nresources:\n  limits:\n    memory: 512Mi\n    cpu: 500m",
+    "project": "auth-service",
+    "confidence": 0.85,
+    "tags": [
+      "type:timeout",
+      "area:database"
+    ],
+    "times_matched": 9
+  },
+  {
+    "id": "a4c27f3b10de",
+    "timestamp": "2026-02-15T08:15:00.000000+00:00",
+    "error_signature": "CrashLoopBackOff.*crash loop|panic.*runtime error",
+    "fix_description": "Application crash due to uninitialized configuration. Ensure config file is mounted and environment variables are set before container startup",
+    "fix_code": "# Add config volume mount and init container\nvolumeMounts:\n  - name: app-config\n    mountPath: /etc/config\nvolumes:\n  - name: app-config\n    configMap:\n      name: worker-service-config\ninitContainers:\n  - name: config-check\n    image: busybox\n    command: ['sh', '-c', 'test -f /etc/config/app.yaml']",
+    "project": "worker-service",
+    "confidence": 0.78,
+    "tags": [
+      "type:crashloop",
+      "area:config"
+    ],
+    "times_matched": 3
+  },
+  {
+    "id": "b5d38e4c21ef",
+    "timestamp": "2026-02-15T09:30:00.000000+00:00",
+    "error_signature": "OOM.*killed|Out of memory|Exit code: 137",
+    "fix_description": "Container running out of memory during batch processing. Increase memory limits and implement streaming/chunked processing instead of loading entire dataset into memory",
+    "fix_code": "resources:\n  requests:\n    memory: 512Mi\n    cpu: 250m\n  limits:\n    memory: 2Gi\n    cpu: 1000m\n\n# Also update application to use chunked processing:\n# BATCH_SIZE=1000\n# STREAM_MODE=true",
+    "project": "analytics-service",
+    "confidence": 0.92,
+    "tags": [
+      "type:oom",
+      "area:resources"
+    ],
+    "times_matched": 6
+  },
+  {
+    "id": "ca261cbe9ea0",
+    "timestamp": "2026-02-15T10:19:11.703849+00:00",
+    "error_signature": "ImportError",
+    "fix_description": "The code is trying to import a module that is not available in the current environment.",
+    "fix_code": "Ensure the required module is installed and properly imported in the code.",
+    "project": "",
+    "confidence": 0.6,
+    "tags": [],
+    "times_matched": 0
+  },
+  {
+    "id": "9604f1358f55",
+    "timestamp": "2026-02-15T11:05:58.461279+00:00",
+    "error_signature": "Unable to Analyze Error Log",
+    "fix_description": "There appears to be an issue with the environment or execution context that is preventing the proper analysis of the provided error log.",
+    "fix_code": [
+      "Check the Python version and ensure the correct version is being used.",
+      "Verify the Python environment is properly set up, with all necessary dependencies installed.",
+      "Ensure the code is being executed in the correct environment (e.g., virtual environment, container, etc.).",
+      "Review the system logs for any additional context or error messages that could help identify the root cause of the issue."
+    ],
+    "project": "",
+    "confidence": 0.6,
+    "tags": [],
+    "times_matched": 0
+  },
+  {
+    "id": "46069f4d5f7f",
+    "timestamp": "2026-02-15T11:20:52.098755+00:00",
+    "error_signature": "ErrorRegex",
+    "fix_description": "Deadlock occurring in the async worker pool due to a mutex acquisition timeout.",
+    "fix_code": "Implement a deadlock detection mechanism and add a timeout handling strategy to the mutex acquisition process.",
+    "project": "",
+    "confidence": 0.6,
+    "tags": [],
+    "times_matched": 0
+  },
+  {
+    "id": "5f2a97b7924c",
+    "timestamp": "2026-02-15T11:21:52.845554+00:00",
+    "error_signature": "DeadlockError",
+    "fix_description": "Potential deadlock in Async Worker threads",
+    "fix_code": "Investigate and resolve deadlock issue in Async Worker threads",
+    "project": "",
+    "confidence": 0.6,
+    "tags": [],
+    "times_matched": 0
+  }
+]

@@ -25,3 +25,8 @@ vault/index.json
 
 # Test / cache
 .pytest_cache/
+venv/
+__pycache__/
+*.pyc
+.env
+

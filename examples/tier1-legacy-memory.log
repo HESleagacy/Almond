@@ -1,0 +1,5 @@
+2026-02-15T10:00:01Z INFO Starting legacy-gateway instance
+2026-02-15T10:00:02Z INFO Connecting to upstream provider...
+2026-02-15T10:00:03Z ERROR Protocol Mismatch: v1 vs v2 handshake failed
+2026-02-15T10:00:03Z ERROR Upstream rejected connection: "Client sent v1 hello, server requires v2"
+2026-02-15T10:00:03Z FATAL Handshake failed code=406

@@ -1,0 +1,11 @@
+2026-02-15T12:00:00Z INFO Starting async-worker-pool v4.5.0
+2026-02-15T12:00:05Z INFO Worker threads initialized: 16
+2026-02-15T12:05:00Z WARN Thread-4 detected potential deadlock
+2026-02-15T12:05:05Z ERROR FATAL: Deadlock in Async Worker - Mutex acquisition timeout
+2026-02-15T12:05:05Z ERROR goroutine 18 [semacquire]:
+2026-02-15T12:05:05Z ERROR sync.runtime_Semacquire(0xc0000b4000)
+2026-02-15T12:05:05Z ERROR /usr/local/go/src/runtime/sema.go:56 +0x42
+2026-02-15T12:05:05Z ERROR sync.(*Mutex).Lock(0xc0000b4000)
+2026-02-15T12:05:05Z ERROR /usr/local/go/src/sync/mutex.go:81 +0xbf
+2026-02-15T12:05:05Z ERROR main.processBatch(0xc0000b4000)
+2026-02-15T12:05:05Z ERROR /app/main.go:142 +0x8a
