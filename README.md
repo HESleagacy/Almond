@@ -111,28 +111,6 @@ almond/
 - `SUB_MODEL` - Child model (default: `claude-3-5-haiku-20241022`)
 - `MAX_RECURSION_DEPTH` - Max recursion depth (default: `3`)
 
-## Testing
-
-Run the full test suite:
-
-```bash
-pytest -v
-```
-
-Run CLI tests only:
-
-```bash
-pytest tests/cli/ -v
-```
-
-All 122 tests should pass.
-
-## Documentation
-
-- **[QUICKSTART.md](QUICKSTART.md)** - Complete setup guide
-- **[CLI_IMPLEMENTATION_SUMMARY.md](CLI_IMPLEMENTATION_SUMMARY.md)** - CLI implementation details
-- **[CLAUDE.md](CLAUDE.md)** - RLM architecture and build rules
-
 ## How It Works
 
 1. **Ingest**: Historical deployment logs, PRs, and fixes are ingested into the vault
